@@ -80,6 +80,3 @@ legendData.forEach((item, i) => {
 });
 });
 
-// SVG drawing
-
-
