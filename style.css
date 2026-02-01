@@ -1,6 +1,6 @@
 :root{
-    --mainpink: #d76983;
-    --darksecondary: #796066;
+    --mainblue: #61a5aa;
+    --darksecondary: #729493;
     --lightpurple: #8a8aba;
     --darkpurple: #836ca8;
     --off-white: #FFF6F6;
@@ -74,7 +74,7 @@ body {
 }
 
 h3{
-    font-family: 'nohemi-med', 'sans-serif';
+    font-family: 'nohemi-light', 'sans-serif';
     color: var(--lightpurple);
 }
 
@@ -163,7 +163,7 @@ section {
     margin-bottom: 5px;
     position: relative;
 
-    background: var(--mainpink);
+    background: var(--mainblue);
     border-radius: 3px;
 
     z-index: 1;
