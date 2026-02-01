@@ -80,3 +80,62 @@ legendData.forEach((item, i) => {
 });
 });
 
+//Creative Visualization
+
+const creativeSVG = document.getElementById("creativeViz");
+
+// Arc
+const arc = document.createElementNS("http://www.w3.org/2000/svg", "path");
+arc.setAttribute("d", "M60 120 Q240 20 420 120");
+arc.setAttribute("fill", "none");
+arc.setAttribute("stroke", "#ffffff");
+arc.setAttribute("stroke-width", "2");
+creativeSVG.appendChild(arc);
+
+// Flower group
+const flowerGroup = document.createElementNS("http://www.w3.org/2000/svg", "g");
+flowerGroup.setAttribute("transform", "translate(240 70)");
+
+const petals = [
+  [0, -8], [8, 0], [0, 8], [-8, 0]
+];
+
+petals.forEach(([x, y]) => {
+  const petal = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+  petal.setAttribute("cx", x);
+  petal.setAttribute("cy", y);
+  petal.setAttribute("r", 6);
+  petal.setAttribute("fill", "#F4A261");
+  flowerGroup.appendChild(petal);
+});
+
+// Center
+const center = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+center.setAttribute("cx", 0);
+center.setAttribute("cy", 0);
+center.setAttribute("r", 4);
+center.setAttribute("fill", "#E76F51");
+flowerGroup.appendChild(center);
+
+creativeSVG.appendChild(flowerGroup);
+
+// Star
+const star = document.createElementNS("http://www.w3.org/2000/svg", "path");
+star.setAttribute(
+  "d",
+  "M 0 -10 L 2 -2 L 10 -2 L 4 2 L 6 10 L 0 5 L -6 10 L -4 2 L -10 -2 L -2 -2 Z"
+);
+star.setAttribute("fill", "#9B5DE5");
+star.setAttribute("transform", "translate(420 120) scale(2)");
+creativeSVG.appendChild(star);
+
+//Heart
+const heart = document.createElementNS("http://www.w3.org/2000/svg", "path");
+heart.setAttribute(
+  "d",
+  "M 0 0 C -5 -15, -20 -15, -20 0 C -20 15, -15 25, 0 30 C 15 25, 20 15, 20 0 C 20 -15, 5 -15, 0 0 Z"
+);
+heart.setAttribute("fill", "#E76F51");
+heart.setAttribute("transform", "translate(60 110)");
+creativeSVG.appendChild(heart);
+

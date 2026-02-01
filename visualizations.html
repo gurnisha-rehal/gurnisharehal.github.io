@@ -19,7 +19,6 @@
                 <ul id="menu">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="visualizations.html">Visualizations</a></li>
-                    <li><a href="about.html">About</a></li>
                 </ul>
             </div>
 
@@ -37,39 +36,10 @@
         <section>
             <h2>SVG Visualization</h2>
             <p>Just a fun little image I created using SVG.</p>
-            <!-- Responsiveness -->
-            <svg id="svgExample" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
-              <!-- Arc -->
-              <path d="M 60 120 Q 200 20 340 120" fill="none" stroke="black" stroke-width="4" />
-              <!-- Heart -->
-              <path d="M60 115 C50 95, 20 100, 30 130 C40 160, 60 175, 60 175 C60 175, 80 160, 90 130 C100 100, 70 95, 60 115Z" fill="#FF4D4D" />
-              <!-- Flower / g groups everything into one movable object-->
-              <g id="flower" transform="translate(200 70)">
-                <!-- petals -->
-                <circle cx="0" cy="-8" r="10" fill="#F4A261"/>
-                <circle cx="10" cy="0" r="10" fill="#F4A261"/>
-                <circle cx="0" cy="8" r="10" fill="#F4A261"/>
-                <circle cx="-10" cy="0" r="10" fill="#F4A261"/>
+            <svg id="creativeViz" viewBox="0 0 480 340" preserveAspectRatio="xMidYMid meet">
 
-                <!-- center -->
-                <circle cx="0" cy="0" r="6" fill="#E76F51"/>
-              </g>
-              <!-- Star -->
-              <path
-                d="M 0 -10 
-                  L 2 -2 
-                  L 10 -2 
-                  L 4 2 
-                  L 6 10 
-                  L 0 5 
-                  L -6 10 
-                  L -4 2 
-                  L -10 -2 
-                  L -2 -2 Z"
-                fill="goldenrod"
-                transform="translate(340 120) scale(3)"
-              />
-              <!-- Head -->
+          <!-- Head -->
+            <g id="face" transform="translate(65 10)">
               <path d="M210 240 
               C230 230, 240 210, 230 190 
               C215 165, 180 170, 170 200 
@@ -104,7 +74,8 @@
               <circle cx="165" cy="220" r="20" fill="black"></circle>
               <circle cx="170" cy="210" r="20" fill="black"></circle>
               <circle cx="170" cy="260" r="20" fill="black"></circle>
-            </svg>
+            </g>
+          </svg>
         </section>
     </main>
     <footer>

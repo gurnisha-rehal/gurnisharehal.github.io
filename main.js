@@ -16,3 +16,8 @@ contactBtn.addEventListener("click", () => {
     contactBtn.textContent = "Show Contact Info";
   }
 });
+
+document.querySelector("#flower")
+  .addEventListener("mouseenter", () => {
+    document.querySelector("#flower").setAttribute("opacity", "0.7");
+  });
