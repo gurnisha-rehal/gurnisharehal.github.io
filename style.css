@@ -196,13 +196,13 @@ section {
     transform: rotate(45deg) translate(-2px, -1px);
     background: white;
 } 
-/* But let's hide the middle one */
+/* Hide the middle one */
 #menu-toggle input:checked ~ span:nth-last-child(3) {
     opacity: 0;
     transform: rotate(0deg) scale(0.2, 0.2);
 }
 
-/* Oh yeah and the last one should go the other direction */
+/* Last one should go the other direction */
 #menu-toggle input:checked ~ span:nth-last-child(2) {
     transform: rotate(-45deg) translate(0, -1px);
 }
@@ -232,7 +232,7 @@ section {
     font-size: 1.30rem;
 }
 
-/* And let's slide it in from the right */
+/* Slide it in from the right */
 #menu-toggle input:checked ~ ul{
     transform: none;
 }
@@ -276,6 +276,13 @@ button {
     font-size: 1rem;
     cursor: pointer;
     margin-top: 1rem;
+}
+
+/* Visualizations styling */
+svg {
+  border: 1px solid #ccc;
+  margin-top: 1rem;
+  max-width: 100%;
 }
 
 /* IMAGE COLLAGE */
