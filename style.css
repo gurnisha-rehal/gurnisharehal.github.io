@@ -73,6 +73,11 @@ body {
     font-family: 'rubik-reg', 'sans-serif';
 }
 
+h3{
+    font-family: 'nohemi-med', 'sans-serif';
+    color: var(--lightpurple);
+}
+
 header {
     padding:2rem;
     background-color: var(--off-white);
