@@ -1,0 +1,107 @@
+:root{
+    --mainpink: #d76983;
+    --darksecondary: #796066;
+    --lightpurple: #8a8aba;
+    --darkpurple: #836ca8;
+    --off-white: #FFF6F6;
+
+    --border-num: 15px;
+}
+
+@font-face {
+    font-family: 'nohemi';
+    src: url(../fonts/Nohemi/Nohemi-Bold.ttf);
+}
+
+@font-face {
+    font-family: 'nohemi-med';
+    src: url(../fonts/Nohemi/Nohemi-Medium.ttf);
+}
+
+@font-face {
+    font-family: 'nohemi-semi-bold';
+    src: url(../fonts/Nohemi/Nohemi-SemiBold.ttf);
+}
+
+@font-face {
+    font-family: 'nohemi-light';
+    src: url(../fonts/Nohemi/Nohemi-Light.ttf);
+}
+
+@font-face {
+    font-family: 'nohemi-black';
+    src: url(../fonts/Nohemi/Nohemi-Black.ttf);
+}
+
+@font-face {
+    font-family: 'nohemi-extra-light';
+    src: url(../fonts/Nohemi/Nohemi-ExtraLight.ttf);
+}
+
+@font-face {
+    font-family: 'nohemi-reg';
+    src: url(../fonts/Nohemi/Nohemi-Regular.ttf);
+}
+
+@font-face {
+    font-family: 'rubik-med';
+    src: url(../fonts/Rubik/Rubik-Medium.ttf);
+}
+
+@font-face {
+    font-family: 'rubik-reg';
+    src: url(../fonts/Rubik/Rubik-Regular.ttf);
+}
+
+@font-face {
+    font-family: 'rubik-bold';
+    src: url(../fonts/Rubik/Rubik-Bold.ttf);
+}
+
+@font-face {
+    font-family: 'rubik-light';
+    src: url(../fonts/Rubik/Rubik-Light.ttf);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    line-height:1.6;
+    background-color: var(--off-white);
+    color: black;
+    text-decoration: none;
+    font-family: 'rubik-reg', 'sans-serif';
+}
+
+header {
+    padding:2rem;
+    background-color: var(--off-white);
+    border-bottom: #ccc 1px solid;
+    text-align: center;
+}
+
+main{
+    padding: 2rem;
+}
+
+section {
+    max-width: 800px;
+    margin: auto;
+}
+
+/*Homepage styling*/
+
+nav {
+  margin-top: 1rem;
+}
+
+nav a {
+  margin: 0 1rem;
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
