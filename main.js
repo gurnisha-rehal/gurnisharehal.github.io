@@ -4,6 +4,24 @@
 
 //Conditional logic
 
+
+let titles = document.querySelectorAll(".title");
+console.log(titles);
+
+titles.forEach((title) => {
+  title.addEventListener("mouseenter", () => {
+    title.style.color = "#61a5aa"; // Using a blue color value
+  });
+});
+
+titles.forEach((title) => {
+  title.addEventListener("mouseleave", () => {
+    title.style.color = "black";
+  });
+});
+
+// Toggle contact info display
+
 const contactBtn = document.getElementById("contactBtn");
 const contactInfo = document.getElementById("contactInfo");
 
@@ -17,7 +35,3 @@ contactBtn.addEventListener("click", () => {
   }
 });
 
-document.querySelector("#flower")
-  .addEventListener("mouseenter", () => {
-    document.querySelector("#flower").setAttribute("opacity", "0.7");
-  });

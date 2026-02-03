@@ -1,5 +1,6 @@
 // DATA for the growth bar chart
 //Event listeners and DOM manipulation for SVG chart
+
 document.addEventListener("DOMContentLoaded", () => {
 const skillsData = [
   { skill: "Strategic Preparation", before: 3, after: 5 },
@@ -9,6 +10,15 @@ const skillsData = [
   { skill: "Confidence in Q&A", before: 2, after: 4 }
 ];
 
+const levelsData = [
+  { value: 1, label: "Beginning" },
+  { value: 2, label: "Developing" },
+  { value: 3, label: "Meeting" },
+  { value: 4, label: "Exceeding" },
+  { value: 5, label: "Advanced" }
+];
+
+//X-axis labels and bars
 const svg = document.getElementById("growthBarChart");
 
 const chartHeight = 300;
@@ -39,6 +49,34 @@ skillsData.forEach((item, index) => {
   svg.appendChild(beforeBar);
   svg.appendChild(afterBar);
 });
+
+
+// Y-axis labels and grid lines
+levelsData.forEach(level => {
+  const y = chartHeight - level.value * scaleFactor;
+
+  // Label text
+  const text = document.createElementNS("http://www.w3.org/2000/svg", "text");
+  text.setAttribute("x", 60); // left of bars
+  text.setAttribute("y", y + 4); // vertical alignment tweak
+  text.setAttribute("text-anchor", "end");
+  text.setAttribute("font-size", "11");
+  text.setAttribute("fill", "#555");
+  text.textContent = level.label;
+
+  // Optional grid line
+  const line = document.createElementNS("http://www.w3.org/2000/svg", "line");
+  line.setAttribute("x1", 70);
+  line.setAttribute("x2", 480);
+  line.setAttribute("y1", y);
+  line.setAttribute("y2", y);
+  line.setAttribute("stroke", "#e0e0e0");
+  line.setAttribute("stroke-dasharray", "2,2");
+
+  svg.appendChild(line);
+  svg.appendChild(text);
+});
+
 
   // Setting up labels and legend
 
@@ -138,4 +176,3 @@ heart.setAttribute(
 heart.setAttribute("fill", "#E76F51");
 heart.setAttribute("transform", "translate(60 110)");
 creativeSVG.appendChild(heart);
-

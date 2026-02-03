@@ -276,6 +276,14 @@ button {
     font-size: 1rem;
     cursor: pointer;
     margin-top: 1rem;
+
+    border: none;
+    border-radius: 2rem;
+    background: var(--darksecondary);
+    color: white;
+
+    box-shadow: 0 6px 14px rgba(139, 92, 246, 0.25);
+    transition: background-color 0.3s ease;
 }
 
 /* Visualizations styling */
