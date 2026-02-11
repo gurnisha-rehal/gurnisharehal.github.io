@@ -176,3 +176,5 @@ heart.setAttribute(
 heart.setAttribute("fill", "#E76F51");
 heart.setAttribute("transform", "translate(60 110)");
 creativeSVG.appendChild(heart);
+
+//Vega-lite Visualizations
