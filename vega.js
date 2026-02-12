@@ -15,26 +15,55 @@ fetchData().then(async (data) => {
       { op: "sum", field: "Global_Sales", as: "TotalSales" }
     ]).groupby(["Platform", "Genre"]),
 
-    // Step 2: Rank genres within each platform
+    // Rank genres within each platform
     vl.window([
       { op: "rank", as: "rank" }
     ])
     .sort([{ field: "TotalSales", order: "descending" }])
     .groupby(["Platform"]),
 
-    // Step 3: Keep only top genre per platform
+    // Keep only top genre per platform
     vl.filter("datum.rank == 1")
   )
   .encode(
   vl.y().fieldN("Platform").sort("-x"),
   vl.x().fieldQ("TotalSales").title("Highest Selling Genre"),
   vl.color().fieldN("Genre").title("Top Genre")
-)
-.width("container")
+  )
+.width(600)
 .height(400)
 .toSpec();
 
+  const vlSpec2 = vl
+  .markCircle({tooltip: true})
+  .data(data)
+  .transform(
+    vl.aggregate([
+        { op: "distinct", field: "Genre", as: "GenreCount" },
+        { op: "sum", field: "Global_Sales", as: "TotalSales" }
+    ]).groupby(["Platform"])
+  )
+
+  .encode(
+      vl.y()
+        .fieldN("Platform")
+        .sort("-x"),
+
+      vl.x()
+        .fieldQ("GenreCount")
+        .title("Number of Genres"),
+
+      vl.size()
+      .fieldQ("TotalSales")
+      .scale({range: [50,200]})
+      .title("Total Global Sales"),
+  )
+  .width(600)
+  .height(400)
+  .toSpec();
+
 render("#view", vlSpec);
+render("#view2", vlSpec2);
 });
 
 async function render(viewID, spec) {
