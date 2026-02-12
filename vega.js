@@ -30,9 +30,12 @@ fetchData().then(async (data) => {
   vl.x().fieldQ("TotalSales").title("Highest Selling Genre"),
   vl.color().fieldN("Genre").title("Top Genre")
   )
-.width(600)
-.height(400)
-.toSpec();
+
+  .width("container")
+  .height(400)
+  .toSpec();
+
+  
 
   const vlSpec2 = vl
   .markCircle({tooltip: true})
@@ -81,12 +84,37 @@ fetchData().then(async (data) => {
       .fieldN("Genre")
       .title("Genre")
   )
+  .width(600)
+  .height(400)
   .toSpec();
+
+  const vlSpec4 = vl
+  .markBar({tooltip: true})
+  .data(data)
+  .transform(
+    vl.aggregate([
+      { op: "sum", field: "Global_Sales", as: "TotalSales" }
+    ]).groupby(["Publisher"]),
+    vl.window([
+      { op: "rank", as: "rank" }
+    ]) .sort([{ field: "TotalSales", order: "descending" }])
+    .groupby([]),
+    vl.filter("datum.rank <= 10") 
+  )
+  .encode(
+    vl.x().fieldN("Publisher").sort("-y"),  
+    vl.y().fieldQ("TotalSales").title("Total Global Sales")
+  )
+  .width("container")
+  .height(400)
+  .toSpec();
+
 
 
 render("#view", vlSpec);
 render("#view2", vlSpec2);
 render("#view3", vlSpec3);
+render("#view4", vlSpec4);
 });
 
 async function render(viewID, spec) {
