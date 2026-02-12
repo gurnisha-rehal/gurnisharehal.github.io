@@ -62,8 +62,31 @@ fetchData().then(async (data) => {
   .height(400)
   .toSpec();
 
+  const vlSpec3 = vl
+  .markLine({point: true, tooltip: true})
+  .data(data)
+
+  //Remove N/A years
+  .transform(
+    vl.filter("datum.Year != 'N/A'"),
+  )
+  .encode(
+    vl.x().fieldN("Year"),
+    vl.y()
+      .fieldQ("Global_Sales")
+      .aggregate("sum")
+      .title("Total Global Sales"),
+
+    vl.color()
+      .fieldN("Genre")
+      .title("Genre")
+  )
+  .toSpec();
+
+
 render("#view", vlSpec);
 render("#view2", vlSpec2);
+render("#view3", vlSpec3);
 });
 
 async function render(viewID, spec) {
