@@ -89,25 +89,46 @@ fetchData().then(async (data) => {
   .toSpec();
 
   const vlSpec4 = vl
-  .markBar({tooltip: true})
+  .markBar({ tooltip: true })
   .data(data)
   .transform(
+
+    vl.filter("datum.Year != null"),
+
+    // Select 3 publishers
+    vl.filter(
+      "datum.Publisher == 'Nintendo' || " +
+      "datum.Publisher == 'Activision' || " +
+      "datum.Publisher == 'Electronic Arts'"
+    ),
+
+    // Aggregate per Publisher + Year
     vl.aggregate([
       { op: "sum", field: "Global_Sales", as: "TotalSales" }
-    ]).groupby(["Publisher"]),
-    vl.window([
-      { op: "rank", as: "rank" }
-    ]) .sort([{ field: "TotalSales", order: "descending" }])
-    .groupby([]),
-    vl.filter("datum.rank <= 10") 
+    ]).groupby(["Publisher", "Year"])
   )
   .encode(
-    vl.x().fieldN("Publisher").sort("-y"),  
-    vl.y().fieldQ("TotalSales").title("Total Global Sales")
+    vl.x().fieldO("Year").title("Year"),
+
+    vl.xOffset().fieldN("Publisher"),
+
+    vl.y().fieldQ("TotalSales")
+      .title("Total Global Sales"),
+
+    vl.color().fieldN("Publisher"),
+
+    vl.tooltip([
+      vl.fieldN("Publisher"),
+      vl.fieldO("Year"),
+      vl.fieldQ("TotalSales")
+    ])
   )
-  .width("container")
+  .width(700)
   .height(400)
   .toSpec();
+
+
+
 
 
 
