@@ -123,7 +123,7 @@ fetchData().then(async ({ wide, long }) => {
   .height(400)
   .toSpec();
 
-   const vlSpec5 = vl
+  const vlSpec5 = vl
   .markBar({ tooltip: true })
   .data(long)
   .transform(
@@ -225,6 +225,39 @@ fetchData().then(async ({ wide, long }) => {
   .height(350)
   .toSpec();
 
+  const vlSpec8 = vl
+  .markCircle({ tooltip: true })
+  .data(long)
+  .transform(
+    vl.aggregate([
+      { op: "sum", field: "global_sales", as: "TotalSales" },
+      { op: "distinct", field: "genre", as: "GenreCount" }
+    ]).groupby(["year", "platform"])
+  )
+  .encode(
+    vl.x()
+      .fieldO("year")
+      .title("Year"),
+
+    vl.y()
+      .fieldQ("TotalSales")
+      .title("Total Global Sales"),
+
+    vl.size()
+      .fieldQ("GenreCount")
+      .scale({ range: [20, 800] })
+      .title("Number of Genres"),
+
+    vl.color()
+      .fieldN("platform")
+      .legend(null)
+  )
+
+  .width(700)
+  .height(500)
+  .toSpec();
+
+
 render("#view", vlSpec);
 render("#view2", vlSpec2);
 render("#view3", vlSpec3);
@@ -232,6 +265,7 @@ render("#view4", vlSpec4);
 render("#view5", vlSpec5);
 render("#view6", vlSpec6);
 render("#view7", vlSpec7);
+render("#view8", vlSpec8);
 });
 
 async function render(viewID, spec) {
