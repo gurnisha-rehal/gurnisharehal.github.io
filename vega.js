@@ -231,7 +231,7 @@ render("#view3", vlSpec3);
 render("#view4", vlSpec4);
 render("#view5", vlSpec5);
 render("#view6", vlSpec6);
-render("#view6", vlSpec7);
+render("#view7", vlSpec7);
 });
 
 async function render(viewID, spec) {
