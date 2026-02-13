@@ -40,32 +40,32 @@ fetchData().then(async ({ wide, long }) => {
   
 
   const vlSpec2 = vl
-  .markCircle({tooltip: true})
+  .markRect({ tooltip: true })
   .data(wide)
   .transform(
     vl.aggregate([
-        { op: "distinct", field: "Genre", as: "GenreCount" },
-        { op: "sum", field: "Global_Sales", as: "TotalSales" }
-    ]).groupby(["Platform"])
+      { op: "sum", field: "Global_Sales", as: "TotalSales" }
+    ]).groupby(["Platform", "Genre"])
   )
 
   .encode(
-      vl.y()
-        .fieldN("Platform")
-        .sort("-x"),
+    vl.y()
+      .fieldN("Platform")
+      .title("Platform"),
 
-      vl.x()
-        .fieldQ("GenreCount")
-        .title("Number of Genres"),
+    vl.x()
+      .fieldN("Genre")
+      .title("Genre"),
 
-      vl.size()
+    vl.color()
       .fieldQ("TotalSales")
-      .scale({range: [50,200]})
-      .title("Total Global Sales"),
+      .title("Total Global Sales")
   )
+
   .width(600)
   .height(400)
   .toSpec();
+
 
   const vlSpec3 = vl
   .markLine({point: true, tooltip: true})
@@ -189,22 +189,41 @@ fetchData().then(async ({ wide, long }) => {
 
 
   const vlSpec7 = vl
-  .markBar({ tooltip: true })
+
+  .markBar({tooltip: true })
   .data(long)
   .transform(
-    // Aggregate total sales per platform + region
     vl.aggregate([
       { op: "sum", field: "sales_amount", as: "TotalSales" }
-    ]).groupby(["platform", "sales_region"])
+    ]).groupby(["genre", "platform", "sales_region"]),
+    vl.filter(
+      "datum.platform == 'PS4' || " +
+      "datum.platform == 'X360' || " +
+      "datum.platform == 'Wii'"
+    ),
   )
+
   .encode(
-    vl.x().fieldN("sales_region").title("Region"),
-    vl.y().fieldQ("TotalSales").title("Total Sales (Millions)"),
+    vl.y()
+      .fieldN("genre")
+      .title("Genre")
+      .axis({ grid: false }),
+
+    vl.x()
+      .fieldQ("TotalSales")
+      .title("Total Sales (Millions)")
+      .axis({ grid: false }),
+
+    vl.color()
+      .fieldN("platform"),
+
+    vl.row().fieldN("sales_region")
+    .title("Region")
+
   )
   .width(700)
-  .height(500)
+  .height(350)
   .toSpec();
-
 
 render("#view", vlSpec);
 render("#view2", vlSpec2);
