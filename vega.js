@@ -17,7 +17,7 @@ fetchData().then(async ({ wide, long }) => {
       { op: "sum", field: "Global_Sales", as: "TotalSales" }
     ]).groupby(["Platform", "Genre"]),
 
-    // Rank genres within each platform
+    //Rank genres within each platform
     vl.window([
       { op: "rank", as: "rank" }
     ])
@@ -199,7 +199,9 @@ fetchData().then(async ({ wide, long }) => {
     vl.filter(
       "datum.platform == 'PS4' || " +
       "datum.platform == 'X360' || " +
-      "datum.platform == 'Wii'"
+      "datum.platform == 'Wii' || " +
+      "datum.platform == 'SNES' || " +
+      "datum.platform == 'PC'"
     ),
   )
 

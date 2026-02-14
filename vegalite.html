@@ -41,7 +41,7 @@
 
 <body>
     <header>
-        <h1>Visualizations</h1>
+        <h1>Vega-lite Visualizations</h1>
 
         <nav class="nav-bar">
             <div id="menu-toggle">
@@ -63,83 +63,122 @@
     <main>
     <section>
       <div class="description">
-        <h2>Visualization Title</h2>
+        <h2 class="title">Global Sales by Genre and Platform</h2>
       </div>
       <div class="container">
         <div id="view"></div>
       </div>
       <div class="description">
-        <p> This visualization shows...</p>
+        <h3>Question 1: Which genre generates the highest total global sales in each platform?</h3>
+        <p>I was curious to explore whether different platforms have different genres that they specialize in. Instead of analyzing overall genre popularity, I created a visualization to understand which genre generates the highest total global sales. This also give us insights into gamer expectations from each platform based on their branding. For example, we can see that most gamers prefer playing action games on PlayStation systems. So it was compelling to see that certain consoles align with specific genres.
+        I chose a scatter plot to see a better trend line in which platforms generate the most sales based on the genre. This tells us both which genres are most popular and on which platforms they generate the most sales. To reduce visual clutter, I filtered the chart to display only the top-selling genre per platform and used color encoding to distinguish genres clearly. The horizontal layout improves readability making it easier to compare across platforms. A challenge I faced in creating this visualization was aggregating total global sales by platform and genre. To do this, I learned how to use the .window to rank and filter to ensure that I’m grabbing only the top genre from each platform.
+        </p>
       </div>
       
-      <div class="description">
-        <h2>Visualization Title</h2>
-      </div>
       <div class="container">
         <div id="view2"></div>
       </div>
       <div class="description">
-        <p> This visualization shows...</p>
+        <h3>Question 2: Which platforms support the most genres and how does that impact their production of higher global sales?</h3>
+        <p>I chose this prompt to see the impact of the various diverse genres rather than selecting a single top genre per platform. Compared to the first visualization, this one examines the full distribution of total global sales across all genres, allowing for comparison of both number of genres and sales magnitude. I was particularly interested in whether platforms with broader genre representation also demonstrate stronger overall performance.
+        We can see that platforms such as PS2, Wii, and Xbox 360 have higher sales across multiple genres, indicating that successful platforms support more genres including more popular ones like Action, Sports, and Shooter. I chose a heatmap, for easier comparison as the intensity of colour can help us immediately identify which platforms generate more sales over others.
+        </p>
       </div>
 
       <div class="description">
-        <h2>Visualization Title</h2>
+        <h3>Topic 1 Reflection</h3>
+        <p>Across both visualizations we can see that Action consistently dominates global sales. We also see that the major platforms PS2, PS3, Wii and Xbox 360 also generate higher revenue. Something interesting the heatmap reveals is that most successful platforms tend to support multiple genres rather than relying on a single category.</p>
+      </div>
+
+      <div class="description">
+        <h2>Visualization 2: Sales Over Time by Platform and Genre</h2>
       </div>
       <div class="container">
         <div id="view3"></div>
       </div>
       <div class="description">
-        <p> This visualization shows...</p>
+        <h3>Question 1: How have global sales trends changed over time across genres and which genres experienced peak growth periods?</h3>
+        <p>With this visualization I wanted to understand how the video game industry has evolved over time and which genres contributed most significantly to its growth. I wanted to look at trends of expansion, peak periods and declines in genres. It was interesting to see whether dominant genres shifted over time, such as Action which in 2014 experienced a drastic decline.
+        The visualization reveals a clear peak between the mid-2000s and early 2010s, with Action, Sports, and Shooter genres experiencing the most significant growth. Earlier decades show relatively lower sales across all genres, suggesting that console gaming didn’t become more popularized or vastly exist until the 2000’s. After 2012–2013, most genres experienced a noticeable decline, reflecting a shift in gaming dynamics. 
+        One challenge in creating this visualization was managing visual clutter due to the number of genres represented over a long time span. I chose a multi-line time series chart because it effectively communicates change and allows for direct comparison between genres.
+        </p>
       </div>
 
-      <div class="description">
-        <h2>Visualization Title</h2>
-      </div>
       <div class="container">
         <div id="view4"></div>
       </div>
       <div class="description">
-        <p> This visualization shows...</p>
+        <h3>Question 2: How do trajectories in sales compare between major publishers over the years?</h3>
+        <p>I wanted to get more specific with the visualization and compare the top competing publishers, Nintendo, Electronic Arts, and Activision. Especially during the peak years in the 2000’s I wanted to determine whether one publisher consistently dominated or if leadership shifted across time. This comparison can also show if there was a shift in strategy by the publisher to overtake their competitors' sales.
+        The visualization shows that Nintendo consistently dominates in the mid-2000’s among the three. Electronic Arts and Activision exhibited growth during the late 2000s, which aligns with the rise in Sports and Shooter genres shown in earlier visualizations.
+        One challenge in creating this visualization was learning how to select only 3 publishers using the filter function. I also needed to ensure that the grouped bar comparisons were readable across many years without overcrowding. I found that it was easier to see trends in a grouped bar rather than a stacked one.
+        </p>
       </div>
 
       <div class="description">
-        <h2>Visualization Title</h2>
+        <h3>Topic 2 Reflection</h3>
+        <p>Video game sales show a clear pattern of growth in the early-to-mid 2000s and a noticeable decline after the early 2010s. Action, Sports, and Shooter genres consistently have the highest sales during peak years. At the publisher level, companies like Nintendo, Electronic Arts, and Activision reflect similar growth and decline, with Nintendo showing stronger peaks over others. Overall we see that platforms that the popularity of a genre during a time period plays a pivotal role in whether a publisher and their game succeeds.</p>
+      </div>
+
+      <div class="description">
+        <h2>Visualization 3: Regional Sales vs. Platform</h2>
       </div>
       <div class="container">
         <div id="view5"></div>
       </div>
       <div class="description">
-        <p> This visualization shows...</p>
+        <h3>Question 1: How much does each region contribute to a platform's overall success?</h3>
+        <p>With this prompt I wanted to see the trend of sales by platform through a regional markets perspective. From this visualization we can see whether certain platforms depend on specific regions or if their sales are distributed globally. Additionally we can see how cultural and economic contexts play a role in whether a platform thrives.
+        The results indicate that North America and Europe contribute the most to total sales for most platforms like PS2, PS3, Xbox 360, and Wii. In contrast, in Japan, Nintendo has a higher contribution aligning with their branding. Overall, the data shows that Western markets are the main drivers for platform revenue.
+        I chose a stacked horizontal bar chart as it clearly communicates both total sales and regional contribution to easily recognize regional dependency.
+        </p>
       </div>
 
-      <div class="description">
-        <h2>Visualization Title</h2>
-      </div>
       <div class="container">
         <div id="view6"></div>
       </div>
       <div class="description">
-        <p> This visualization shows...</p>
+        <h3>Question 2: Which platform performs the strongest in each region and how does it vary across the platforms?</h3>
+        <p>This visualization is more focused on regions rather than the platforms in the previous one. Although using the same data variables, the two visualizations are better suited for different problems. If we want to more quickly see dominance of each platform in a region we would use this second one. 
+        From this visualization we can see that North America consistently generates the highest sales across most platforms. In Japan we see some brand loyalty with Nintendo and Playstation. Using the bubble chart, we can highlight the magnitude of differences. The main challenge with the visualization was trying to figure out a new way to manipulate the data to ensure it provides a different but also important value. I believe this chart does a good job in making the differences between regions more visible by encoding the size to the sales.
+        </p>
       </div>
 
       <div class="description">
-        <h2>Visualization Title</h2>
+        <h3>Topic 2 Reflection</h3>
+        <p>Based on both visualizations we can see a pattern of North America and Europe achieving the majority of platform sales. Looking from a regional perspective, we can see that platform success is not distributed globally but their popularity in the regional market shapes them. Western regions reveal more global success whereas Japan is more specific to platforms branded in their region such as Playstation and Nintendo.</p>
       </div>
+
+      <div class="description">
+        <h2>Visualization 4: Tell Us a Visual Story</h2>
+      </div>
+      <div class="description">
+        <h3>Story topic: “How Gaming Evolved: Genre Diversity vs Sales Across Generations”</h3>
+        <p>For my creative piece I want to explore how gaming evolved across regions by comparing genre diversity and sales trends over time. Based on previous data we see that Japan favors role-playing and adventure games, while North America is popular for action and sports games. I want to compare the results to where the platform originates from, such as Nintendo from Japan and Xbox in North America which may influence regional performance. Additionally, I not only want to see the change in genres but also based on the years and the popularity during different times. I’m assuming older platforms will have less genres, resulting in lower sales and modern platforms have more diverse genres. I will use the visualizations to verify if this holds true.</p>
+      </div>
+
       <div class="container">
         <div id="view7"></div>
       </div>
       <div class="description">
-        <p> This visualization shows...</p>
+        <h3>Question: Are certain genres more popular in specific regions, and does platform preference affect overall sales performance?</h3>
+        <p>Overall we see that Action, Shooter, and Sports games generate the highest sales in North America and Europe, particularly on X360 and Wii.
+        In contrast, Japan stands out with Role-Playing games having the most sales highlighting the regional differences in genre preferences. Japanese gamers have a stronger interest in RPGs which are played on SNES and PS4 mainly reinforcing the popularity.</p>
       </div>
 
-      <div class="description">
-        <h2>Visualization Title</h2>
-      </div>
       <div class="container">
         <div id="view8"></div>
       </div>
       <div class="description">
-        <p> This visualization shows...</p>
+        <h3>Question 2: Do modern platforms succeed because they support more genres?</h3>
+        <p>This visualization explores whether modern gaming platforms succeed because they support a wider variety of genres. The bubble chart shows total global sales over time and the size is encoded to represent the number of genres each platform supports. We can see that newer platforms tend to support more genres, however the chart also shows that higher sales are not solely driven by genre variety. Platforms with a variety of genres perform well but so do some with fewer. This being said, the majority of domination platforms do support more genres. Additionally, several platforms with broad genre support express moderate sales. Overall, the visualization indicates that cultural and branding aspects in a region and market timing also play a significant role in the success of a platform or game.</p>
+      </div>
+
+      <div class="description">
+        <h2>Conclusion</h2>
+      </div>
+      <div class="description">
+        <p>These visualizations tell a story of whether regional gaming stereotypes hold up and how the genre popularity may have shifted across regions over time. As a result we can see that Japan dominated more in SNES in earlier years then North America came in with much more revenue with the XBOX. The two visualizations work together to show clear differences in regional preferences through genre popularity and trends over time.</p>
       </div>
 
     </div>
